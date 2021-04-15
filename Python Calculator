@@ -1,0 +1,37 @@
+print("-----| Python Calculator |------\n")
+
+print("1 - Soma;")
+print("2 - Subtração;")
+print("3 - Multiplicação;")
+print("4 - Divisão;")
+print("5 - Finalizar programa;")
+
+Escolha  = int(input('Digite a opção que deseja: '))  
+
+a = int(input('\nDigite um valor: '))
+b = int(input('Digite outro valor: '))
+
+print('\n\n')
+
+if  (Escolha == 1):
+	valorFinal = a + b
+
+	print("\nO valor da soma é %r" %(valorFinal))
+	print('\nFim da equação!')
+elif(Escolha == 2):
+	valorFinal = a - b
+
+	print("O resultado da Subtração é: %r" %(valorFinal))
+	print('\nFim da equação!')
+elif(Escolha == 3):
+	valorFinal = a * b
+
+	print("O resultado da multiplicação é: %r" %(valorFinal))
+	print('\nFim da equação!')
+elif(Escolha == 4):
+	valorFinal = a / b
+
+	print("\nO resultado da divisão é: %r \n\n" %(valorFinal))
+	print('\nFim da equação!')
+else: 
+	print('Escolha um valor valido ')
