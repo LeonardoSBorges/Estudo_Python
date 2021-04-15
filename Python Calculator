@@ -11,7 +11,6 @@ Escolha  = int(input('Digite a opção que deseja: '))
 a = int(input('\nDigite um valor: '))
 b = int(input('Digite outro valor: '))
 
-print('\n\n')
 
 if  (Escolha == 1):
 	valorFinal = a + b
