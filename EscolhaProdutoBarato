@@ -1,0 +1,11 @@
+#Faça um programa que pergunte o preço de três produtos e informe qual produto você deve comprar, sabendo que a decisão é sempre pelo mais barato.
+
+produto1 = float(input("Digite o valor de um produto: ")) 
+menor = produto1
+position = 1
+for x in range(2):
+    produto = float(input("Digite o valor do produto: "))
+    if produto < menor:
+        menor = produto
+        position = x + 2
+print("O %rº produto é o que você deve comprar: R$ %r " %(position, menor))
