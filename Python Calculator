@@ -1,36 +1,44 @@
-print("-----| Python Calculator |------\n")
+def somar(valor1, valor2):
+    soma = valor1 + valor2
+    return soma
 
-print("1 - Soma;")
-print("2 - Subtração;")
-print("3 - Multiplicação;")
-print("4 - Divisão;")
-print("5 - Finalizar programa;")
+def minus(valor1, valor2):
+    subtrair= valor1 - valor2
+    return subtrair
 
-Escolha  = int(input('Digite a opção que deseja: '))  
+def multiply(valor1, valor2):
+    multiplicar = valor1 * valor2
+    return multiplicar
 
-a = int(input('\nDigite um valor: '))
-b = int(input('Digite outro valor: '))
+def division(valor1, valor2):
+    dividir = valor1 / valor2
+    return dividir
 
+print("============= CALCULADORA =============")
+i = 0
+operators = ['soma', 'subtração', 'multiplicação', 'divisão']
+symbols = ['+', '-', '*', '/']
+while i < 1:
+    print("Opções: \n1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Divisão\n5 - Sair")
+    option = int(input("Escolha uma das opções acima (1/2/3/4): "))
 
-if  (Escolha == 1):
-	valorFinal = a + b
+    if option > 0 and option < 5:
+        valor1 = float(input("\nDigite um valor: "))
+        valor2 = float(input("Digite ou valor: "))
 
-	print("\nO valor da soma é %r" %(valorFinal))
-	print('\nFim da equação!')
-elif(Escolha == 2):
-	valorFinal = a - b
+        if option == 1:
+            total = somar(valor1, valor2)
+        elif option == 2:
+            total = minus(valor1, valor2)
+        elif option == 3:
+            total = multiply(valor1, valor2)
+        elif option == 4:
+            total = division(valor1, valor2)
 
-	print("O resultado da Subtração é: %r" %(valorFinal))
-	print('\nFim da equação!')
-elif(Escolha == 3):
-	valorFinal = a * b
+        print("Resultado final da %s %d %s %d = %d \n" %(operators[option - 1], valor1, symbols[option - 1], valor2, total))
 
-	print("O resultado da multiplicação é: %r" %(valorFinal))
-	print('\nFim da equação!')
-elif(Escolha == 4):
-	valorFinal = a / b
-
-	print("\nO resultado da divisão é: %r \n\n" %(valorFinal))
-	print('\nFim da equação!')
-else: 
-	print('Escolha um valor valido ')
+    elif option == 5:
+        print("Encerrando programa!")
+        i = 1
+    else:
+        print("A opção escolhida é invalida, por favor tente novamente!\n")
