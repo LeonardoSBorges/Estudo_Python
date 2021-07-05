@@ -1,0 +1,80 @@
+#SISTEMA DE BANCO
+import time
+
+#Recebe valor
+def valueOption():
+    print("\nOpções\n1 - Saque\n2 - Depósito\n3 - Extrato\n4 - Tudo sobre BORGES BANK\n5 - Sair")
+    value = (int(input('Escolha uma das opções (1/2/3/4/5): ')))
+    return value
+
+#Saque
+def withdraw(saque, saldoTotal):
+    saldoTotal-= saque
+    print("\nSaque de R$ " + str(valor) + " efetuado com sucesso!")
+    return saldoTotal
+
+#Deposito
+def deposit(deposito, saldoTotal):
+    saldoTotal += deposito
+    print("\nDeposito de R$ "+ str(valor) +" efetuado com sucesso!")
+    return saldoTotal
+
+def information():
+    print("A BORGES BANK é um banco especializado na sua segurança, não utilizamos cartão,\n somente reconhecimento facial junto com reconhecimento digital,"
+          "caso queira podemos adicionar senhas chaves.\n"
+          "O sistema de pagamento é somente pro QR CODE pelo nosso aplicativo, ou transferencia instantanea com conferencia facial!\n"
+          "Caso não seja nosso cliente procure uma agencia mais proxima e venha fazer parte dessa familia, venha caminhar junto com os "
+          "BORGES!"
+          "\nAss BORGES BANK")
+operations = ['sacar', 'depositar']
+
+saldoTotal = 0
+stats = []
+while True:
+    print("====================== BANK BORGES ======================")
+
+    # escolher uma opção
+    option = valueOption()
+    valor = 0
+    if option > 0 and option < 5:
+        if option != 3 and option != 4:
+            valor = (float(input('Digite o valor que deseja ' + operations[option - 1] + ': ')))
+            abs(valor)
+
+            print("Processando pedido...")
+            time.sleep(1)
+
+        if option == 1 and valor <= saldoTotal:
+            stats.append(-valor)
+            stats.append(saldoTotal)
+            saldoTotal = withdraw(valor, saldoTotal)
+
+        elif option == 2:
+            stats.append(valor)
+            stats.append(saldoTotal)
+            saldoTotal = deposit(valor, saldoTotal)
+
+        elif option == 3:
+            for value in stats:
+                print(value)
+                
+        elif option == 4:
+            information()
+
+        else:
+            time.sleep(1)
+            print('\nO saque requerido é maior que o valor obtido em conta.')
+
+        #Mostrar o saldo depois de operações
+        print('Saldo Atual R$' + str(saldoTotal))
+
+    elif option == 5:
+        #Finalização do programa
+        print("\n\nFinalizando programa!\nObrigado por escolher a BORGES BANK!")
+        break
+
+    else:
+        print("O valor digitado é incorreto, por favor escolha uma das opções oferecidas!")
+
+#Valor final depois de finalizar o programa
+print('Saldo total da conta é de R$' + str(saldoTotal))
