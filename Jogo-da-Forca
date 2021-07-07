@@ -154,8 +154,6 @@ def main():
             print('A palavra era ' + game.word)
             break
 
-    print('\nFoi bom jogar com você! Agora vá estudar!\n')
-
 
 # Executa o programa
 if __name__ == "__main__":
